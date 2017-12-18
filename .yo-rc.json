@@ -1,7 +1,7 @@
 {
   "generator-express": {
     "promptValues": {
-      "type": "MVC",
+      "type": "Basic",
       "viewEngine": "Jade",
       "cssPreprocessor": "Node-Sass",
       "buildTool": "Grunt",
