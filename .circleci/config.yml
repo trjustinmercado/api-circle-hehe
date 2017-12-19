@@ -27,9 +27,11 @@ jobs:
           - v1-dependencies-
 
       - run: 
-          name: Install dependencies and AWS-CLI
-          command: yarn install |
-                   pip install awscli --upgrade --user
+          name: Install dependencies
+          command: yarn install 
+      - run:
+          name: Install AWS CLI
+          command: pip install awscli --upgrade --user
 
       - save_cache:
           paths:
