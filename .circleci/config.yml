@@ -33,6 +33,7 @@ jobs:
           name: Install AWS CLI
           command: |
             sudo apt-get -y -qq install awscli
+            aws --version
 
       - save_cache:
           paths:
