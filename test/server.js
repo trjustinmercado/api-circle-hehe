@@ -1,8 +1,8 @@
 const server = require("../bin/www").server,
-    http = require("http")
+    http = require("http");
 expect = require("chai").expect;
 
-describe('/', function () {
+describe("/", function () {
     it("should return 200", function (done) {
         http.get("http://localhost:3000", function (res) {
             expect(res.statusCode).to.equal(200);
@@ -12,5 +12,5 @@ describe('/', function () {
         after(function () {
             server.close();
         });
-    })
+    });
 });
