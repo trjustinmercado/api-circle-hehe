@@ -26,7 +26,10 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: yarn install
+      - run: 
+          name: Install dependencies and AWS-CLI
+          command: yarn install |
+                   pip install awscli --upgrade --user
 
       - save_cache:
           paths:
@@ -34,5 +37,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: npm test
-      - run: npm run test:lint
+      - run: 
+          name: Testing
+          command: npm test |
+                   npm run test:lint
