@@ -45,4 +45,4 @@ jobs:
           command: |
               npm test
               npm run test:lint
-              aws deploy push --application-name API-Testing --s3-location s3://circle-ci-api/node.zip --ignore-hidden-files
+              aws deploy push --application-name API-Testing --s3-location s3://circle-ci-api/node.zip --ignore-hidden-files --region="us-east-2"
