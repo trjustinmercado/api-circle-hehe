@@ -45,4 +45,11 @@ jobs:
           command: |
               npm test
               npm run test:lint
+      - run:
+          name: Deploy Push to S3 Bucket
+          command: |
               aws deploy push --application-name API-Testing --s3-location s3://circle-ci-api/node.zip --ignore-hidden-files --region="us-east-2"
+      - run:
+          name: Create Deployment
+          command: |
+              aws deploy create-deployment --application-name CodeDeploy_Test --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name CodeDeploy_Group --s3-location bucket=circle-ci-api,bundleType=zip,key=node.zip
