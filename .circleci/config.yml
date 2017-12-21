@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:7.10
+      - image: circleci/python:2.7
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -37,7 +37,7 @@ jobs:
       - run:
           name: Install AWS CLI
           command: |
-            sudo apt-get -y -qq install awscli
+            sudo pip install awscli --upgrade --user
             aws --version
         
       # run tests!
