@@ -2,9 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/node-app
-hooks:
-  BeforeInstall:
+    destination: /home/ec2-user/deployed-app
     - location: scripts/install_dependencies.sh
       timeout: 300
       runas: ec2-user
