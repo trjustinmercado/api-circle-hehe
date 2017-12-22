@@ -35,7 +35,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       
       - run:
-          name: Install AWS CLI
+          name: Check if AWS CLI is installed
           command: |
             aws --version
         
