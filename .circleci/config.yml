@@ -52,4 +52,4 @@ jobs:
       - run:
           name: Create Deployment
           command: |
-              aws deploy create-deployment --region="us-east-2" --application-name API-Testing --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name CircleCIDeploymentGroup --s3-location bucket=circle-ci-api,bundleType=zip,key=node.zip
+              aws deploy create-deployment --ignore-application-stop-failures --region="us-east-2" --application-name API-Testing --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name CircleCIDeploymentGroup --s3-location bucket=circle-ci-api,bundleType=zip,key=node.zip
