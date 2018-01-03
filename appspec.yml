@@ -3,6 +3,7 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/node-app
+    BeforeInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300
       runas: ec2-user
