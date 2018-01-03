@@ -5,5 +5,5 @@ if [[ -n  $isExistApp ]]; then
 fi
 isExistApp=`pgrep node`
 if [[ -n  $isExistApp ]]; then
-    sudo killall node
+    pm2 kill
 fi
